@@ -3,7 +3,7 @@
 ## Live Endpoint
 
 ```
-POST https://<your-render-url>/identify
+POST https://bitespeed-assignment-dpvs.onrender.com/identify
 ```
 
 ## Setup Locally
