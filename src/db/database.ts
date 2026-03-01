@@ -1,7 +1,13 @@
 import Database, { type Database as DatabaseType } from "better-sqlite3";
 import path from "path";
+import fs from "fs";
 
-const db: DatabaseType = new Database(path.resolve(__dirname, "../../contacts.db"));
+const dataDir = path.join(__dirname, "..", "data");
+if (!fs.existsSync(dataDir)) {
+  fs.mkdirSync(dataDir, { recursive: true });
+}
+
+const db: DatabaseType = new Database(path.join(dataDir, "contacts.db"));
 
 db.pragma("journal_mode = WAL");
 db.pragma("foreign_keys = ON");
