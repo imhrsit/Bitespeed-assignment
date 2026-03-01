@@ -5,6 +5,6 @@ const app = express();
 
 app.use(express.json());
 
-app.post("/identify", identifyRouter);
+app.use("/identify", identifyRouter);
 
 export default app;
